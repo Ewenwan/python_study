@@ -1,0 +1,15 @@
+a {
+    text-decoration: none;
+}
+a:link{
+
+}
+a:hover {
+    /*鼠标悬停*/
+}
+a:visited {
+    /*访问后的链接*/
+}
+a:active {
+    /*激活状态*/
+}

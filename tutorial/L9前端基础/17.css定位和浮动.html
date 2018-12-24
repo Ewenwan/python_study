@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>定位和浮动</title>
+    <style>
+    h5 {
+        float: left;
+    }
+
+    .top{
+        width: 100%;
+        height: 70px;
+        background-color: #cfff7a;
+    }
+
+    .topcenter{
+        width: 1000px;
+        height: 100%;
+        background-color: darkturquoise;
+        font-size: 20px;
+        text-align: center;
+        /*margin: 0px auto 0px auto;*/
+        /*简写 两个参数时第一个参数代表上下，第二个参数代表左右，auto自动计算距离*/
+        margin: 0px auto;
+        /*float: left;*/
+    }
+    </style>
+</head>
+<body>
+    <div class="top" >
+        <h5>顶层</h5>
+        <div class="topcenter">顶层中部</div>
+    </div>
+</body>
+</html>
+
+<!--
+浮动：div块默认宽度100%，高度由div块中的内容决定。是从上到下排列的。但网页中常有div块横向排列的情况，需要将div块浮动。
+文本默认也占据一定空间。 div、h1、p标签其实都是块级元素。span行级
+定位：
+static
+fixed  自适应定位。好像淘宝右侧的浮动工具栏，随着网页翻动，工具栏一直显示在当前视野内
+relative 相对定位。常与绝对定位连用，作为其父元素。
+absolute 绝对定位。常用属性top left。
+
+-->
+
+
+<!--参考
+定位 浮动http://w3schools.wang/css/css_positioning.html
+
+（需科学上网 w3shool官网）
+-->

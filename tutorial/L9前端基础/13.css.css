@@ -1,0 +1,18 @@
+body {
+    /*background: #333 url();*/
+    background-color: #cfff7a;
+    background-image: url("aaa.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+p {
+    font-family: "microsoft YaHei", sans-serif;
+    color: #000;
+    font-size:15px;
+    text-align: left;
+    text-indent: 10px;
+}
+

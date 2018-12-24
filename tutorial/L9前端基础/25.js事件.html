@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>js事件</title>
+    <script>
+        function aaa() {
+            alert("hello world")
+        }
+
+    </script>
+</head>
+<body>
+    <button onclick="javascript: aaa()">点我</button>
+
+    <div style="width: 200px;height: 50px; background-color: #d193f5"
+    onmouseover="this.innerHTML='hello';"
+    onmouseout="this.innerHTML='';">
+
+    </div>
+
+
+    <div id="idname">通过id获取元素</div>
+    <div class="classname">通过class 名获取元素</div>
+    <div class="classname">通过class 名获取元素</div>
+
+    <script>
+        div = document.getElementById("idname")
+        div.style.backgroundColor="red";
+
+        divs = document.getElementsByClassName("classname")
+        console.log(divs)
+        divs[0].innerHTML = "hello";
+
+        document.getElementsByClassName("");
+
+        //创建新节点  插入到网页中
+        // div.childNodes
+        mydiv = document.createElement("div")
+        mydiv.style.height="300px";
+        mydiv.style.backgroundColor = "blue";
+        div.appendChild(mydiv);
+    </script>
+
+</body>
+</html>
+
+<!--
+事件：event  鼠标或热键引发的动作。例如鼠标单击、鼠标悬停。
+
+常用事件：
+onclick       单击
+ondbclick     double   双击
+onfocus       获得焦点
+onblue        失去焦点
+onmouseover        鼠标移到某个元素上
+onmouseout         鼠标移除某个元素
+onkeypress         键盘按键按下并松开
+on
+-->
+
+<!--DOM
+回顾2html图例，引入一下概念
+DOM：document object model  文档对象模型。整个网页html标签，下面有head、body标签，body标签下包含p、h1、img等，整个网页是文档树。每一个元素是一个节点，body标签是p、h1节点的父节点，p节点就是body节点子节点chile。
+
+js操作dom场景：
+动态弹出对话框，子网页，改变样式，改变菜单，增加交互体验。
+动态请求后端接口获取信息，增加数据安全防爬虫去。
+前后端分离，js负责跟后端交互数据。
+js网页特效。
+表单验证。
+
+js选择标签常用方法：
+document.getElementById("idname")    返回一个节点
+document.getElementsByClassName("classname")    返回节点组成的数据
+ document.getElementsByClassName("");
+节点里有属性
+节点.innerHTML     改变标签中的内容
+节点.style         改变标签样式
+
+document.createElement("div")   创建新元素
+节点.appendChild(mydiv);       一个节点下添加新节点
+-->

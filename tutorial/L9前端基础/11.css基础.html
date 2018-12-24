@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Css基础</title>
+    <link href="11.css基础.css" rel="stylesheet" type="text/css">
+
+    <style>
+        body {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body style="background-color: #ff0000;">
+    <h1>Hello World</h1>
+</body>
+</html>
+
+<!--
+(了解）css介绍：cascading style sheet层叠样式表，专门控制html网页元素的
+外观样式，包括大小、颜色、布局等方面。
+语法： 选择器 {css表达式}。 大括号表示语句块，css表达式 ；分号结尾。
+内部样式：style标签，一般写在head标签下。
+行内样式：<body style="background-color: #ff0000;">，标签内写style属性，属性值写css语句。
+外部样式：先写一个.css文件，然后再html页面中引用。link标签引用，rel属性 relation。优点，耦合度低，易于维护，比较css语句多的情况。
+
+样式优先级：从高大到低。  行内样式 > 内部样式外部引用
+场景：行内样式和内部样式适合css代码少，html简单的情况；外部样式适合css语句多
+
+
+(补充)CDN：Content Delivery Network, 即内容分发网站。之前我们写css都是引用本地，以后使用别人的css代码时，一种方式s是复制别人的代码到自己的项目，但更简单的方式是请求别人的服务器随网页在线下载和加载。但在线请求网站服务器cssjs资源仍有问题，服务器压力比较大，离得远的服务器传输速度漫。CDN应运而生，原理是服务器上的css js资源缓存到全国各个cdn服务器节点，当某个人访问网站时，会从最近的cdn节点获取数据，从而提升访问速度。
+（了解）图片格式：png无损图片，画质好但大，支持同名。jpg，有损压缩，体积大大减少画质轻度损耗。gif更好的压缩格式、支持动图多帧。网速慢时先加载一部分。
+（了解）字体图标：原来的网页中的图标都是先用ps之类的工具做好jpg、png格式图片再插入网页中。而现在一些网页图标的源代码使用i标签（字体）插入的。电脑中的字体，例如微软雅黑，是事先定义好 由数学算书法绘制出来的矢量图形。所以人们用做矢量字体的方式做了一套图标，在网页中i标签插入 定义class对应不同图标代码。字体图标的好处是体积小，放大缩小不失真。
+（了解）SVG：矢量图标，有html代码定义，除了体积小，放大缩小不失真的优点，功能比字体图标更加复杂，可以复杂图表。缺点学习成本高预览不方便。
+-->

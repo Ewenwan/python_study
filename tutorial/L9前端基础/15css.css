@@ -1,0 +1,50 @@
+*{
+    /*表示所有标签*/
+    /*所有标签的内边框和外边距清零*/
+    padding: 0;
+    margin: 0;
+}
+
+/*div模块基本定义。常用width height border*/
+.box{
+    font-size: 40px;
+    width: 100px;
+    height: 50px;
+    border: 1px solid red;
+    background-color: green;
+}
+
+h1{
+    border: 1px solid red;
+    /*只写一个参数，表示上右下左都是padding 20px*/
+    padding: 10px;
+    /*四个参数，分别表示上右下左*/
+    padding: 20px 20px 0px 40px;
+    /*两个参数，第一参数表示上下，第二左右*/
+    padding: 20px 10px;
+    /*分别定义*/
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.td {
+    border-style: dotted;
+    border-width: 5px;
+    border-color: red blue grey green;
+}
+
+.wb {
+    width: 500px;
+    border: 1px solid red;
+    margin: 20px;
+    margin-top: 20px;
+}
+.bk{
+    border-style: solid;
+}
+.nj{
+    padding: 10px;
+}
+.zw{
+    background-color: blue;
+}

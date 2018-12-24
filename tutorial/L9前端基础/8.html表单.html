@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+</head>
+<body>
+    <h3>表单</h3>
+
+    <form action="http://www.baidu.com" enctype="multipart/form-data">
+        <label>用户名：</label><input type="text" placeholder="请输入用户名" required="true"><br>
+        <label>邮箱：</label><input type="email"><br><!--自带简单表单验证-->
+        <label>密码：</label><input type="password"/><br/>
+
+        单选：
+        男<input type="radio" name="sex"value="male">
+        女<input type="radio" name="sex"value="female">
+        <br>
+
+        复选框：
+        体育<input type="checkbox"  name="hobby" value="sport">
+        数学<input type="checkbox"  name="hobby" value="math">
+        阅读<input type="checkbox"  name="hobby" value="reading">
+        英语<input type="checkbox"  name="hobby" value="english">
+        <br>
+
+        下拉列表：
+        <select value="程序员">
+            <option>学生</option>
+            <option>程序员</option>
+            <option>医生</option>
+        </select>
+        <br>
+
+        文本域：
+        <textarea placeholder="请写反馈建议" readonly="readonly"></textarea>
+        <br/>
+
+        上传文件：
+        <!--form标签中添加enctype属性-->
+        <input type="file">
+        <br>
+
+        <input type="reset" value="重置">
+        <input type="submit" value="确认提交">
+    </form>
+</body>
+</html>
+
+<!--
+form标签：表单。
+
+input标签：用户输入相关。
+type属性：
+- text   文本框
+- password  密码框 ，自动隐藏用户输入内容。
+- radio     单选。注意那一组input选项起相同的name属性，写好的value属性。
+- checkbox  多选。
+- file      上传文件 。 注意form头部声明enctype属性
+- reset     重置
+- submit    提交
+action属性： 定义表单请求的后台地址。
+required 必须要求填的项，后跟true
+readonly 只读，用于一些表单上不能修改的内容，后跟readonly
+
+select标签：下拉列表。
+option标签：下拉列表中的一项。
+
+taxtarea标签： 文本域，比较长、大块文本
+-->
+
+<!--
+查看网页源代码
+谷歌浏览器网页空白右键/审查
+-->

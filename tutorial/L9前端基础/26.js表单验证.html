@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>js表单验证</title>
+    <script type="text/javascript">
+        function check_required() {
+            //检查表单的邮箱是否已输入
+            var usermail_input = document.getElementsByClassName("username")[0];
+            console.log(usermail_input.value)
+            if (usermail_input.value.length == 0) {
+                alert("邮箱不能为空")
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+     <form onsubmit="return check_required();" action="http://www.baidu.com" enctype="multipart/form-data">
+         <label>用户名：</label><input name="username" type="text" placeholder="请输入用户名" required="true"><br>
+         <label>邮箱：</label><input name="username" type="email"><br><!--自带简单表单验证-->
+         <label>密码：</label><input name="password" type="password"/><br/>
+
+         单选：
+         男<input type="radio" name="sex"value="male">
+         女<input type="radio" name="sex"value="female">
+         <br>
+
+         复选框：
+         体育<input type="checkbox"  name="hobby" value="sport">
+         数学<input type="checkbox"  name="hobby" value="math">
+         阅读<input type="checkbox"  name="hobby" value="reading">
+         英语<input type="checkbox"  name="hobby" value="english">
+         <br>
+
+         下拉列表：
+         <select value="程序员">
+             <option>学生</option>
+             <option>程序员</option>
+             <option>医生</option>
+         </select>
+         <br>
+
+         文本域：
+         <textarea placeholder="请写反馈建议" readonly="readonly"></textarea>
+         <br/>
+
+         上传文件：
+         <!--form标签中添加enctype属性-->
+         <input type="file">
+         <br>
+
+         <input type="reset" value="重置">
+         <input type="submit" value="确认提交">
+     </form>
+
+</body>
+</html>
+
+<!--
+本节作为js综合练习，要求了解：
+公司前后端分离，有专门前端负责；html5新的type类型内置常见验证功能；前端验证是不可靠的。
+
+作业：手写邮箱验证码js函数
+百度“js字符串操作” ，例如参考  js https://www.cnblogs.com/YYvam1288/p/6973252.html,查看学习别人的示例，字符串查找。
+判断是否邮箱： 959@xx.com , 1是否有@符号  2有没有 
+-->

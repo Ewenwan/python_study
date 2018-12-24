@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>js控制语句</title>
+    <script>
+        // if语句
+        var score = 70;
+        if (score >= 60) {
+            // alert("及格");
+            console.log("及格")    //js控制台输出信息
+        }
+        else if (score >= 70){
+
+        }
+        else {
+
+        }
+
+        //switch  语句
+        var lever = 1
+        var mag = ""
+        switch(score) {
+            case 1:
+                mag = "普通会员"
+            case 2:
+                mag = "VIP";
+            default:
+                mag = "其他情况"
+        }
+        console.log(mag)
+
+        // for循环
+        for(var i=0; i<10; i++) {
+            console.log(i)
+            document.write(i + "<br>")
+        }
+===
+        //while循环
+        var i = 0;
+        while (i<10){
+            console.log(i);
+            i++;
+        }
+
+        //break continue
+        for(var i=0; i<10; i++){
+            if (i==3){continue}
+            document.write(i + "<br>");
+            //break;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
