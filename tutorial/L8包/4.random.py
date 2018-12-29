@@ -14,7 +14,7 @@ print(random.choice([1, 2, 3, 4]))
 
 # shuffle  洗牌
 list1 = [1, 2, 3, 4]
-random.shuffle(list1)
+
 print(list1)
 
 
