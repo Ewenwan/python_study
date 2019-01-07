@@ -75,7 +75,7 @@ headers = ChromeHeaders2Dict(header)
 comment_resp=requests.get(url=comment_url,params=params,headers=headers)
 print(comment_resp.status_code)
 comment_str = comment_resp.text
-
+print(comment_str)
 comment_dict = json.loads(comment_str)
 # comment_dict = json.load('4js接口-京东评论-评论数据.json')
 comments = comment_dict['comments']

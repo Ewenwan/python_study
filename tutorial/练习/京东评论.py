@@ -54,15 +54,14 @@ user-agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, 
         for comment in comment_list:
             print(f'正在保存第{y}页')
             for i in comment['comments']:
-                # print(f"用户名是：{i['nickname']}\n评论内容是：{i['content']}\t时间：{i['creationTime']}")
                 cursor.execute('INSERT INTO jdcomment(id,comment,username,create_time) VALUES (%s,%s,%s,%s)', [xx, i['content'], i['nickname'], i['creationTime']])
                 xx += 1
-            y += 1
+                y += 1
         conn.commit()
         conn.close()
 
 
 if __name__ == '__main__':
     x = Jdcomment()
-    x.save_data(5)
+    x.save_data(7)
 
