@@ -14,6 +14,7 @@ print(os.path.exists('text.tet'))   # False
 # os.remove('bbb.txt')
 # 4> 创建文件夹  make directory
 os.mkdir('aaa')
+os.makedirs('bbb/bb')  #'创建bbb下bb'
 # 5> 列出当前文件夹下的文件， 相当于cmd中dir命令、linux  ls。
 os.listdir()
 # 6> 切换当前文件夹  change， 相当于cmd中的命令

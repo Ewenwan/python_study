@@ -26,7 +26,7 @@ for x in range(1,10):
 
     # tuzhi = tu+'\t'+tupian
 
-    urlretrieve(tupian,filename='D:/美女图片/{}{}.jpg'.format(tu,x))
+    #urlretrieve(tupian,filename='D:/美女图片/{}{}.jpg'.format(tu,x))
     # print('正在下载第{}张图片'.format(x))
     if x == 20:
         print('下载完成')

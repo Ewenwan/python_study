@@ -8,7 +8,7 @@ from wordcloud import WordCloud
 
 
 def get_content():
-    with open('tb_comments_1.json', encoding='utf-8') as f:
+ with open('tb_comments_1.json', encoding='utf-8') as f:
         comments = json.load(f)
         comment = comments['rateDetail']['rateList']
         comment_list = []
@@ -50,7 +50,6 @@ def process_comments(comment):
     list1 = []
     for i in comment:
         list1.append(i[0])
-    # print(list1)
     str1 = ''.join(list1)
     return str1
 def cut_word(str1):
@@ -75,7 +74,7 @@ def word_cloud(results):
 def bingzhuang():
         conn = pymysql.connect(user='root', password='trc', host='127.0.0.1', db='taobao')
         cursor = conn.cursor()
-        cursor.execute('SELECT DISTINCT action_sku FROM comment')
+        cursor.execute('SELECT DISTINCT action_sku FROM comment') # DISTINCT 不重复distinct
         cate =cursor.fetchall()
         cate_list = []
         for i in cate:
@@ -83,7 +82,7 @@ def bingzhuang():
         cursor.execute('SELECT COUNT(id) FROM comment')
         num_all = cursor.fetchone()[0]  # 查询总数
 
-        cate_num_list = []  # 构造商品类型+统计数列表
+        cate_num_list = []  # v构造商品类型+统计数列表
         for b in cate_list:
             cursor.execute(
                 "SELECT COUNT(id) FROM comment WHERE action_sku='%s'" % b)

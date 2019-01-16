@@ -1,0 +1,26 @@
+<!--2基本操作.py配套测试html文件-->
+<html>
+    <head><title>Selenium Test Page</title></head>
+<body>
+    <h2>Selenium 操作</h2>
+    <ul>
+        
+        <li><input type="text" id="element_id"><label color='red'>find_element_by_id</label></li>
+        <li><input type="text" name="element_id"><label color='red'>find_element_by_name</label></li>
+        <li><a href='full.html' target="_blank">find_element_by_link_text</a></li>
+        <li><a href='partial_full.html' target="_blank">find_element_by_partial_link_text</a></li>
+        <li><input type="text" class="highlight"><label color='red'>find_element_by_css_selector</label></li>
+        <li><article>find_element_by_tag_name</article></li>
+        <li><input type="text" id="xpathname"><label color='red'>find_element_by_xpath</label></li>
+        <li><input type="text" class="highlight_class"><label color='red'>find_element_by_class_name</label></li>
+        <li><a href='full.html'>forward_back</a></li>
+        <li><button onclick="show()">click</button></li>
+    </ul>
+
+</body>
+<script>
+    function show() {
+        window.alert('i am a box here');
+    }
+</script>
+</html>

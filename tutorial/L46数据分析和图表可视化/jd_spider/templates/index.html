@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="canaan">
+    <link rel="icon" href="{{ url_for('static', filename='favicon-terminal.ico') }}">
+
+    <title>京东评论分析</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/dashboard.css') }}" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">京东评论分析</a>
+      <input disabled="true" class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">.</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <span data-feather="home"></span>
+                  商品信息 <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file"></span>
+                  原始评论
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="shopping-cart"></span>
+                  词云
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="users"></span>
+                  高频词topk
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="bar-chart-2"></span>
+                  颜色分类
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="layers"></span>
+                  推荐指数
+                </a>
+              </li>
+            </ul>
+
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>目录</span>
+              <a class="d-flex align-items-center text-muted" href="#">
+                <span data-feather="plus-circle"></span>
+              </a>
+            </h6>
+            <ul class="nav flex-column mb-2">
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('third_category_product_list', category='手机',page=0) }}">
+                  <span data-feather="file-text"></span>
+                  手机
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  母婴
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">统计</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+            </div>
+          </div>
+          <!--统计图表-->
+          <div id="chart_word_frequencey" class="" style="">
+            <embed type="image/svg+xml" src={{context.chart_word_frequency_url|safe}} />
+          </div>
+          <div id="chart_word_frequencey" class="" style="">
+            <embed type="image/svg+xml" src={{context.chart_word_positive_url|safe}} />
+          </div>
+          <div id="chat_product_proportion_image_url" class="col-auto">
+            <img src={{context.chart_product_proportion_url}} />
+          </div>
+          <div id="chart_comment_trend_url" class="col-auto">
+            <img src={{context.chart_comment_trend_url}} />
+          </div>
+
+          <p></p>
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">词云</h1>
+          </div>
+          <div id="word_cloud_image_url" class="col-auto">
+            <img src={{context.word_cloud_image_url}} />
+          </div>
+
+          <p></p>
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">得分</h1>
+          </div>
+          <div id="emotion_score" class="col-auto">
+            <h3>{{context.emotion_score}} </h3>
+            <h4>得分 = 积极词*频次*感情程度/评论数*系数 </h4>
+            <h6>备注：积极词：'好''不错''优秀' ，感情程度：'很''非常''太'，系数：算出的值比较小，乘以100得到一个容易看的分数</h6>
+          </div>
+
+
+          <p></p>
+          <h2>原始数据（最近十条）</h2>
+          <div class="table-responsive">
+            <table class="table table-striped table-sm">
+              <thead>
+                <tr>
+                  <th>数据库id#</th>
+                  <th>时间</th>
+                  <th>用户昵称</th>
+                  <th>评论内容</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for comment in context.comment_rencent_objs %}
+                <tr>
+                  <td>{{ comment.id }}</td>
+                  <td>{{ comment.creationTime }}</td>
+                  <td>{{ comment.nickname }}</td>
+                  <td>{{ comment.content }}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                  <td>1,002</td>
+                  <td>amet</td>
+                  <td>consectetur</td>
+                  <td>adipiscing</td>
+                  <td>elit</td>
+
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+  </body>
+</html>
