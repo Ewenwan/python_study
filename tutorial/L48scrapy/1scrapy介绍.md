@@ -35,8 +35,13 @@ scrapy依赖包较多，有些包用c写的需要vc编译器。
 方法一：anaconda, 自带上千种编译好的科学计算相关包。优点自带编译后的scrapy。缺点：体积大，下载包300m，安装一个多G。主要是科学计算领域，大多数包用不上，flask django又没有需要新下。miniconda是anaconda的精简版本。版本有限。缺少.net会导致无报错失败。
 方法二(推荐)：pip install scrapy   哪些包报错需要vc编译器的，再单独去发布编译后的包的网站下载对应平台编译后的.whl文件安装。
 参考链接： 
-1.第三方编译后包的网站 https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted。
-2. 图文教程 https://www.1owo.com/python/python/python-scrapy%E5%AE%89%E8%A3%85%E4%B9%8Bwindows%E7%8E%AF%E5%A2%83%E4%B8%8B/
+1. 安装twisted。第三方编译后包的网站 https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted。
+2. 安装scrapy。图文教程 https://www.1owo.com/python/python/python-scrapy%E5%AE%89%E8%A3%85%E4%B9%8Bwindows%E7%8E%AF%E5%A2%83%E4%B8%8B/
+3. 执行安装过pywin32的脚本。
+
+报错：
+1. 安装twisted.whl时拒绝访问。解决，使用管理员权限的终端。
+2. 运行scrapy crawl时报错win32。解决，上面博客图文教程中选做步骤改为必做，py32脚本也需要安装。
 
 
 ### 创建项目

@@ -1,0 +1,1 @@
+详见项目 templates/article.html中的js
