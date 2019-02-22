@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <div>
+        {# url_for构造带参数的url #}
+        {#http://127.0.0.1:5000/product_list?page_no=1&cat=sport#}
+        <a href="{{ url_for('product_list', page=1,cat='sport') }}">带参数的请求 http://127.0.0.1:5000/product_list?page_no=1&cat=sport</a>
+    </div>
+
+</body>
+</html>

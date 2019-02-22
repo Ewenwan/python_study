@@ -1,0 +1,21 @@
+{#网页公共整体结构#}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% endblock head %}
+</head>
+<body>
+{#就好像后端里的父类#}
+
+    <div id="content">{% block content %}{% endblock %}</div>
+
+    <div id="footer">
+        {% block footer %}
+            &copy;Copyright 2018 by <a href="http://www.zhiyou100.com/">智游</a>
+        {% endblock %}
+    </div>
+</body>
+</html>

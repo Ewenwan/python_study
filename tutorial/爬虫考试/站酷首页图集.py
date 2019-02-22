@@ -2,7 +2,7 @@
 __author__ = 'trc'
 import requests
 import threading
-import time,os
+import time, os
 from lxml import etree
 from urllib.request import urlretrieve
 

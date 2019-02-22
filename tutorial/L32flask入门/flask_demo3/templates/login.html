@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页</title>
+</head>
+<body>
+    <form action="{{ url_for('login_submit') }}" method="post">
+        <label>用户名：</label><input name="username" type="email" placeholder="请输入账户邮箱" class="" />
+        <label>密码：</label><input name="password" type="password" />
+        <input type="submit" value="登录">
+    </form>
+
+</body>
+</html>

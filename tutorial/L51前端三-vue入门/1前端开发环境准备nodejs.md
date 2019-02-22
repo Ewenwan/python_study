@@ -1,16 +1,19 @@
 ## nodejs
-1. 官网 
-2. exe
-3. 环境变量
+1. 官网 下载LTS版本
+2. 安装程序一直next  （组件默认全选node runtime，npm，add to path)
+3. node -v, npm -v查看版本
+
 ### (选做)包管理工具npm cnpm
+npm类似python中的pip，包管理工具。语法相似，默认install安装后只有本项目可用，类似python中的虚拟环境。注意-g参数，全局安装后windows终端可以使用命令。
 由于一些众所周知的原因。类似换pip源。
 1. 安装淘宝镜像 
-cnpm
+`npm install -g cnpm --registry=https://registry.npm.taobao.org`
 2. 常用命令 
 `cnpm install xxx`   install 可以简写成i
 `cnpm install xxx -g`     -g参数代表global全局,安装完包后可以调用这个包的命令。类似django安装完后path下有一个django-admin.exe脚本。
 
 (练习)安装httpserver包并开启局域网文件共享。
+`npm install http-server -g`
 
 ## (选做)IDE webstorm
 类似安装pycharm。
@@ -32,6 +35,19 @@ nodejs的包管理跟python相似但不同
 1. vue-dev tools, 方便vue项目调试 
 2. postman   接口测试工具。可以寻找在线工具或requests包或curl 代替。
 3. json-viewer awesome, 谷歌插件。可以在线工具或复制到ide中格式化 代替。
+
+
+## (课外)hexo博客
+1. 官网https://hexo.io/docs/
+2.  cnpm install -g hexo-cli
+3. 创建项目 hexo init [project-name]
+4. 安装依赖  cd到项目根目录 cnpm install
+5. 把静态资源和博客内容生成出来 hexo generate
+6. 开启web服务 hexo server
+7. 浏览器查看
+
+
+
 
 
 

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    {# 渲染单值 #}
+    <!-- 渲染单值   读-->
+    <div>
+    你好， {{ name }}
+    </div>
+
+    <!-- (不提倡)set   执行、写   %}-->
+    <div>
+        {% set links=['www.baidu.com', 'www.douban.com']  %}
+        {{ links[0] }}
+    </div>
+
+    {# 控制语句 if #}
+    {% if name=='小明' %}
+        <h1>你好，管理员</h1>
+    {% elif name=='小红' %}
+        <h1>你好，小红</h1>
+    {% else %}
+        <h1></h1>
+    {% endif %}
+
+    {#循环#}
+    {% for name in name_list %}
+        <h5>{{ name }}</h5>
+    {% endfor %}
+
+    {# 渲染字典类型的值 #}
+    {% for stu in stu_list %}
+        <p>{{ loop.index }}姓名：{{ stu['name'] }}
+            年龄：{{ stu.age }}
+            电话: {{ stu['phone'] }}
+        </p>
+    {% endfor %}
+
+    {# 为了安全，防止XSS攻击，默认情况下不会解析渲染值中的html语法。safe装饰器可以解析 #}
+    <div>{{ html_content | safe }}</div>
+
+
+    {#    作业 隔行变色#}
+    <div>
+        <table>
+            <th>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>电话</td>
+            </th>
+            {% for stu in stu_list %}
+                {% if loop.index % 2 == 1 %}
+                    <tr class="blue_col" style="background-color: blue;">
+                        <td>{{ stu['name'] }}</td>
+                        <td>{{ stu['age'] }}</td>
+                        <td>{{ stu['phone'] }}</td>
+                    </tr>
+                {% else %}
+                    <tr class="">
+                        <td>{{ stu['name'] }}</td>
+                        <td>{{ stu['age'] }}</td>
+                        <td>{{ stu['phone'] }}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
